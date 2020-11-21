@@ -28,7 +28,7 @@ View(dt2) # Ver la base de datos importada
 #Estimar el modelo 
 ## Creando las variables
 peso<-dt2$peso_al_nacer
-cigs<-dt2$cigs_cons_sem
+cigs<-dt2$cigs_cons_sem 
 
 mod2<-lm(peso~cigs)
 stargazer(mod2,type = "text")
