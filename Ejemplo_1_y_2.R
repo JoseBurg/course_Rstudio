@@ -32,5 +32,3 @@ cigs<-dt2$cigs_cons_sem
 
 mod2<-lm(peso~cigs)
 stargazer(mod2,type = "text")
-
-
