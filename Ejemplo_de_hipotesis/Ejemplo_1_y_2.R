@@ -19,6 +19,7 @@ stargazer(mod1,type = "text")
 
 # T critico:
 qt(0.05/2,933) # Valor absoluto 
+# NOTA: R siempre dara el T critico negativo.
 
 #<------------------------Ejemplo_2----------------------------->
 ## Importando la base de datos 
