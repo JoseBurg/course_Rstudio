@@ -10,6 +10,7 @@ excel_sheet("ENFT_Abril_2011.xlsx")
 datos <- merge(miembros, ocupacion, by=c("EFT_VIVIENDA", "EFT_HOGAR","EFT_MIEMBRO"))
 
 
+
 #Creando
 
 sexo <-datos$EFT_SEXO

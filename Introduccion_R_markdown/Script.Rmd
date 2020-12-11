@@ -3,12 +3,12 @@ title: "Introducción a R Markdown"
 subtitle: "Econometría con Francisco"
 author: "José Burgos"
 date: "12/11/2020"
-output: pdf_document
+output:
+   pdf_document:
 toc: yes
 toc_depth: 3
 params:
   img: NULL 
-
 ---
 
 ```{r setup, include=FALSE}
@@ -17,9 +17,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r, echo=FALSE, include=FALSE}
 # Paquetes utilizdos 
-library(readxl);library(ggplot2);library(tidyverse)
+library(readxl);library(ggplot2);library(tidyverse);library(officedown); library(wooldridge)
 
 ```
+
 
 
 \newpage
@@ -41,7 +42,8 @@ a la hora de hacer un trabajo en formato de pdf en Rstudio con **markdown**.
 Esta enfocado en la materia Econometría impartida en la facultad de [Economia](//www.uasd.edu.do/index.php/economicas-y-sociales)[^2]
 en la [UASD](https://www.uasd.edu.do/)._
 
-![](\cloud\\project\Ejemplo_estimaciones\Logo.png)
+
+
 
 
 \newpage 
@@ -54,23 +56,57 @@ en la [UASD](https://www.uasd.edu.do/)._
 
 # Metodologia (Errores comunes)
 
-1+
+1. Orden de los comando en los `chunk`
+   - instalación de paquetes
+   - llamadas de paquetes 
 
-2+
+>
+
+2. Errores alfabetico 
+   - varibles
+   - comandos
+   - base de datos
+   - nombres de objetos y BD
+   - escritura incorrecta
+
+
+3. 
 
 
 
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+
+
+\newpage
+
+# Revision de literatura (Grafico con ggplot)
+
+```{r, message=FALSE,warning=FALSE}
+data("wage1")
+#View(wage1)
+
+wage1 %>% 
+   ggplot()+
+   geom_histogram(aes(wage, fill = "Salario"))+
+   labs(title = "Salario (wage)")+
+   geom_histogram(aes(exper, fill = "Experiencia", alpha = 0.5))
+
+
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-# Revision de literatura
 
+
+## Atajos de la consola o impresión 
+
+
+`ctrl + shift + enter` **_Impresión de pdf_**
+
+
+
+\newpage
 
 
 # Pregunta de investigación 
