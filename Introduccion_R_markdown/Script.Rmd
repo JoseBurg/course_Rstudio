@@ -1,0 +1,94 @@
+---
+title: "Introducción a R Markdown"
+subtitle: "Econometría con Francisco"
+author: "José Burgos"
+date: "12/11/2020"
+output: pdf_document
+toc: yes
+toc_depth: 3
+params:
+  img: NULL 
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, echo=FALSE, include=FALSE}
+# Paquetes utilizdos 
+library(readxl);library(ggplot2);library(tidyverse)
+
+```
+
+
+\newpage
+
+# Introducción [^1]
+
+## Formatos de texto
+
+Este documento recoje los errores
+frecuentes que se cometen y algunos tip necesarios 
+a la hora de hacer un trabajo en formato de pdf en Rstudio con **markdown**.
+Esta enfocado en la materia Econometría impartida en la facultad de [Economia](//www.uasd.edu.do/index.php/economicas-y-sociales)[^2]
+en la [UASD](https://www.uasd.edu.do/). 
+
+>
+_Este documento recoje los errores
+frecuentes que se cometen y algunos tip necesarios 
+a la hora de hacer un trabajo en formato de pdf en Rstudio con **markdown**.
+Esta enfocado en la materia Econometría impartida en la facultad de [Economia](//www.uasd.edu.do/index.php/economicas-y-sociales)[^2]
+en la [UASD](https://www.uasd.edu.do/)._
+
+![](\cloud\\project\Ejemplo_estimaciones\Logo.png)
+
+
+\newpage 
+
+
+[^1]: En proceso 
+[^2]: Esta materia es Impartida por el maestro Lic. Francisco A. Ramirez.
+
+
+
+# Metodologia (Errores comunes)
+
+1+
+
+2+
+
+
+
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+# Revision de literatura
+
+
+
+# Pregunta de investigación 
+
+# Modelo teórico 
+
+# Modelo Econometríco
+
+
+# Resultados 
+
+## Estimacion de modelos
+
+## Pruebas 
+
+
+## Pruebas de Hipotesís 
+
+# Concluciones 
+
+# Referencias 
