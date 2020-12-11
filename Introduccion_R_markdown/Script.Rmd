@@ -82,7 +82,7 @@ en la [UASD](https://www.uasd.edu.do/)._
 
 # Revision de literatura (Grafico con ggplot)
 
-```{r, message=FALSE,warning=FALSE}
+```{r, message=FALSE,warning=FALSE, include=TRUE}
 data("wage1")
 #View(wage1)
 
