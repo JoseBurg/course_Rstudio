@@ -7,8 +7,6 @@ output:
    pdf_document:
 toc: yes
 toc_depth: 3
-params:
-  img: NULL 
 ---
 
 ```{r setup, include=TRUE}
