@@ -82,7 +82,7 @@ en la [UASD](https://www.uasd.edu.do/)._
 
 # Revision de literatura (Grafico con ggplot)
 
-```{r, message=FALSE,warning=FALSE, include=TRUE, fig.align='center',fig.width=5,fig.dim=5}
+```{r,echo = TRUE, message=FALSE,warning=FALSE, include=TRUE,fig.align='center',fig.width=5,fig.dim=5}
 data("wage1")
 #View(wage1)
 
@@ -96,7 +96,7 @@ wage1 %>%
 ```
 
 
-```{r}
+```{r , echo = T}
 # Analisis de los datos 
 filt<-wage1 %>% 
    filter(wage <10) %>% 
