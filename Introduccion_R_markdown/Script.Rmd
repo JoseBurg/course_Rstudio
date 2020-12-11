@@ -11,7 +11,7 @@ params:
   img: NULL 
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -82,21 +82,29 @@ en la [UASD](https://www.uasd.edu.do/)._
 
 # Revision de literatura (Grafico con ggplot)
 
-```{r, message=FALSE,warning=FALSE}
+```{r,echo = TRUE, message=FALSE,warning=FALSE, include=TRUE,fig.align='center',fig.width=5,fig.dim=5}
 data("wage1")
 #View(wage1)
 
 wage1 %>% 
    ggplot()+
    geom_histogram(aes(wage, fill = "Salario"))+
-   labs(title = "Salario (wage)")+
+   labs(title = "Salario (wage)",
+        y = " ",
+        x = " ")+
    geom_histogram(aes(exper, fill = "Experiencia", alpha = 0.5))
-
-
-
 ```
 
 
+```{r , echo = T}
+# Analisis de los datos 
+filt<-wage1 %>% 
+   filter(wage <10) %>% 
+   count()
+
+
+filt/length(wage1$wage) *100
+```
 
 
 ## Atajos de la consola o impresión 
