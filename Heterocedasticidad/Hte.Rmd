@@ -1,0 +1,101 @@
+---
+title: "Heterocedasticidad"
+author: "José Burgos"
+date: "22/12/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r,include=FALSE,warning=FALSE,message=FALSE}
+# Paquetes
+library(wooldridge)
+library(car)
+library(ggplot2)
+library(tidyverse)
+library(lmtest)
+```
+
+
+
+# Prueba de heterocedasticidad
+
+## Análisis gráfico 
+
+```{r}
+data("hprice1")
+# Heterocedasticidad
+
+mod1<-lm(hprice1$price~hprice1$lotsize+hprice1$bdrms+hprice1$sqrft)
+mod2<-lm(log(hprice1$price)~hprice1$lotsize+hprice1$bdrms+hprice1$sqrft)
+
+# modelo 1
+yhat1<-mod1$fitted.values # valores ajustado
+residuos1<-mod1$residuals
+
+# modelo 2
+yhat2<-mod2$fitted.values  # valores ajustado
+residuos2<-mod2$residuals
+
+
+ggplot()+
+  geom_point(aes(
+    yhat1,
+    residuos1
+  ),color = "blue")+
+  theme_minimal()
+
+ggplot()+
+  geom_point(aes(
+    yhat2,
+    residuos2
+  ),color = "blue")+
+  theme_minimal()
+
+
+```
+
+
+
+## Contraste de Breusch-Pagan
+
+##### Residuos son homocedastico
+$$H_0:Homocedasticidad$$
+
+##### Residuos son heterocedasticos 
+$$H_1:Heterocedasticidad$$
+
+
+```{r}
+bptest(mod1)
+bptest(mod2)
+```
+
+En este modelo hay heterocedasticidad, debido a que el p-valor es muy inferior al 10%. Por ende existe evidencia empirica para rechazar la hipotesis nula. 
+
+
+## Corregiendo la heterocedasticidad 
+
+### Corrigiendo los errores estandar
+
+```{r}
+coeftest(mod1,vcov. = hccm(mod1))
+summary(mod1)
+```
+
+## Error de especificacion en la forma funcional 
+
+$$H_0:No \ hay\ error\ de\ especificacion\ en\ la\ forma\ funcional$$
+
+
+$$H_1:Hay error de especificacion en la forma funcional$$
+
+
+
+```{r}
+
+stargazer:: stargazer(mod1,type = "text")
+resettest(mod1,power = 2:3,type = c("fitted"))
+```

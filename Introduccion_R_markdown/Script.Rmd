@@ -7,8 +7,6 @@ output:
    pdf_document:
 toc: yes
 toc_depth: 3
-params:
-  img: NULL 
 ---
 
 ```{r setup, include=TRUE}
@@ -17,8 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r, echo=FALSE, include=FALSE}
 # Paquetes utilizdos 
-library(readxl);library(ggplot2);library(tidyverse);library(officedown); library(wooldridge)
-
+library(readxl);library(ggplot2);library(tidyverse); library(wooldridge)
 ```
 
 
@@ -29,17 +26,19 @@ library(readxl);library(ggplot2);library(tidyverse);library(officedown); library
 
 ## Formatos de texto
 
+
 Este documento recoje los errores
 frecuentes que se cometen y algunos tip necesarios 
 a la hora de hacer un trabajo en formato de pdf en Rstudio con **markdown**.
 Esta enfocado en la materia Econometría impartida en la facultad de [Economia](//www.uasd.edu.do/index.php/economicas-y-sociales)[^2]
 en la [UASD](https://www.uasd.edu.do/). 
 
+
 >
 _Este documento recoje los errores
 frecuentes que se cometen y algunos tip necesarios 
 a la hora de hacer un trabajo en formato de pdf en Rstudio con **markdown**.
-Esta enfocado en la materia Econometría impartida en la facultad de [Economia](//www.uasd.edu.do/index.php/economicas-y-sociales)[^2]
+Esta enfocado en la materia Econometría impartida en la facultad de [Economia](//www.uasd.edu.do/index.php/economicas-y-sociales)
 en la [UASD](https://www.uasd.edu.do/)._
 
 
@@ -72,7 +71,9 @@ en la [UASD](https://www.uasd.edu.do/)._
 
 3. 
 
+Modelo $\beta_0=\alpha_0$
 
+$$\beta_0 = \sum$$
 
 
 
@@ -93,6 +94,7 @@ wage1 %>%
         y = " ",
         x = " ")+
    geom_histogram(aes(exper, fill = "Experiencia", alpha = 0.5))
+
 ```
 
 
@@ -110,7 +112,7 @@ filt/length(wage1$wage) *100
 ## Atajos de la consola o impresión 
 
 
-`ctrl + shift + enter` **_Impresión de pdf_**
+`ctrl + shift + K` **_Impresión de pdf_**
 
 
 
@@ -119,14 +121,13 @@ filt/length(wage1$wage) *100
 
 # Pregunta de investigación 
 
-# Modelo teórico 
+# Modelo teórico y Econometríco
 
-# Modelo Econometríco
-
+## Estimacion de modelos
 
 # Resultados 
 
-## Estimacion de modelos
+
 
 ## Pruebas 
 
@@ -136,3 +137,5 @@ filt/length(wage1$wage) *100
 # Concluciones 
 
 # Referencias 
+
+
