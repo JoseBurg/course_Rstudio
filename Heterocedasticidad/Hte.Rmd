@@ -29,16 +29,10 @@ data("hprice1")
 # Heterocedasticidad
 
 mod1<-lm(hprice1$price~hprice1$lotsize+hprice1$bdrms+hprice1$sqrft)
-mod2<-lm(log(hprice1$price)~hprice1$lotsize+hprice1$bdrms+hprice1$sqrft)
 
 # modelo 1
 yhat1<-mod1$fitted.values # valores ajustado
 residuos1<-mod1$residuals
-
-# modelo 2
-yhat2<-mod2$fitted.values  # valores ajustado
-residuos2<-mod2$residuals
-
 
 ggplot()+
   geom_point(aes(
@@ -46,6 +40,17 @@ ggplot()+
     residuos1
   ),color = "blue")+
   theme_minimal()
+```
+
+\newpage
+
+```{r}
+# modelo 2
+mod2<-lm(log(hprice1$price)~hprice1$lotsize+hprice1$bdrms+hprice1$sqrft)
+
+
+yhat2<-mod2$fitted.values  # valores ajustado
+residuos2<-mod2$residuals
 
 ggplot()+
   geom_point(aes(
@@ -53,11 +58,10 @@ ggplot()+
     residuos2
   ),color = "blue")+
   theme_minimal()
-
-
 ```
 
 
+\newpage
 
 ## Contraste de Breusch-Pagan
 
@@ -73,10 +77,11 @@ bptest(mod1)
 bptest(mod2)
 ```
 
-En este modelo hay heterocedasticidad, debido a que el p-valor es muy inferior al 10%. Por ende existe evidencia empirica para rechazar la hipotesis nula. 
+En este modelo hay heterocedasticidad al 10% de significancia, debido a que el p-valor es muy inferior al 10%. Por ende existe evidencia empirica para rechazar la hipotesis nula, solo al 10%, pero al 1% y 5% no se rechaza la hipotesis nula. 
 
+\newpage
 
-## Corregiendo la heterocedasticidad 
+## Corrigiendo la heterocedasticidad 
 
 ### Corrigiendo los errores estandar
 
@@ -85,12 +90,15 @@ coeftest(mod1,vcov. = hccm(mod1))
 summary(mod1)
 ```
 
+
+\newpage
+
 ## Error de especificacion en la forma funcional 
 
 $$H_0:No \ hay\ error\ de\ especificacion\ en\ la\ forma\ funcional$$
 
 
-$$H_1:Hay error de especificacion en la forma funcional$$
+$$H_1:Hay\ error\ de\ especificacion\ en\ la\ forma\  funcional$$
 
 
 
