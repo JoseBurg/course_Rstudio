@@ -1,9 +1,9 @@
 # Instalando y cargando el paquete de wooldrige 
-install.packages("wooldridge") # instalando 
+#install.packages("wooldridge") # instalando 
 library("wooldridge")  # cargando 
 
 # paquete adicional para representar los resultados mas organizados 
-install.packages("stargazer")
+#install.packages("stargazer")
 library("stargazer")
 
 # <-------------------------Ejemplo_01-------------------------->
@@ -16,11 +16,11 @@ library("stargazer")
 # 2) Que indica el intercepto 
 
 datos01<-sleep75
-View(datos01)
+#View(datos01)
 
 mod01<-lm(datos01$sleep~datos01$totwrk)
-summary(mod01)
-stargazer(mod01,type = "text")
+summary(mod01) # Estimación forma 1
+stargazer(mod01,type = "text")  # Estimación forma 2
 
 # Convertiendo los minutos en hora 
 # mod01.1<-lm(I(datos01$sleep/60)~I(datos01$totwrk/60))
