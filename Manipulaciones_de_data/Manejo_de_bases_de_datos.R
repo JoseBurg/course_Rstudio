@@ -1,5 +1,3 @@
-# setwd("C:/Users/econo/Google Drive/Universidad/UASD/Econometria/Clases")
-
 library(readxl)
 
 miembros <- read_xlsx("ENFT_Abril_2011.xlsx", sheet = "Miembros")
@@ -11,7 +9,7 @@ datos <- merge(miembros, ocupacion, by=c("EFT_VIVIENDA", "EFT_HOGAR","EFT_MIEMBR
 
 
 
-#Creando
+#Creando la variable sexo
 
 sexo <-datos$EFT_SEXO
 log_edad <- log(datos$EFT_EDAD)
