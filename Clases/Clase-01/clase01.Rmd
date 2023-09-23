@@ -1,0 +1,83 @@
+---
+title: "Ciencias de Datos con R"
+subtitle: ""
+author: "José Burgos"
+date: "19/12/2020"
+output:
+  beamer_presentation:
+    number_sections: true
+theme: Warsaw
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Contenido
+
+-   R y Rstudio
+
+-   Instalación
+
+-   Conceptos fundamentales
+
+# R y Rstudio
+
+## R
+
+### R y sus usuarios
+
+R es un lenguaje de programación y entorno computacional enfocado en estadística. A diferencia de otros lenguajes, R se diseñó exclusivamente para tareas estadísticas. Instalar R en una computadora implica configurar el entorno computacional necesario para escribir y ejecutar instrucciones en código.
+
+## Rstudio
+
+### Rstudio - un IDE para R
+
+Se puede usar `R` directamente, pero para trabajar con proyecto es recomendable utilizar `Rstudio`, que es un entorno integrado de desarrollo (IDE, por su siglas en inglés).
+
+## ¿Para que se usa R?
+
+### Usos de R más comunes
+
+-   **Manipulación de datos**: R ofrece herramientas para limpiar, transformar y manipular datos, incluyendo la biblioteca dplyr.
+
+-   **Visualización interactiva**: Crear visualizaciones interactivas y dashboards con bibliotecas como `Shiny`.
+
+-   **Estadísticas descriptivas**: Realizar análisis de estadísticas descriptivas, como cálculos de media, mediana, moda, desviación estándar, etc.
+
+# Instalación
+
+## Sistemas operativos
+
+Funcional en:
+
+-   Windows
+
+-   OSX
+
+-   Linux
+
+Page of Posit
+
+1.  R: <https://cran.r-project.org/bin/windows/base/>
+2.  Rstudio: <https://posit.co/downloads/>
+
+# Conceptos fundamentales
+
+## Consola
+
+### Entorno computacional
+
+La consola de `R` veremos donde es ejecutado, solo nos dará el resultado de lo que pidamos allí mismo. En `R`, *ejecutar*, *llamar* o *correr* implica dar una instrucción o entrada al programa para que realice una tarea en específica.
+
+## Objetos, constantes y variables
+
+-   Todo lo que existe en `R` es un **`objeto`**, desde los datos hasta las estructuras de datos.
+
+-   Así como en matemáticas, una **`constante`** es un valor inmutable, mientras que una **`variable`** es un contenedor que puede cambiar de valor durante la ejecución de un programa.
+
+### Por ejemplo
+
+En la función de ingresos totales de una empresa, donde el producto del precio y la cantidad nos resulta los ingresos, es este caso el precio es la constante y la cantidad la variable:
+
+$$IT = P * Q$$
